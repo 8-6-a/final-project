@@ -1,0 +1,14 @@
+<h1>Home</h1>
+
+<div>
+  <h5>Create Todo</h5>
+  <input type="description" placeholder="description" [(ngModel)]="todo.description" />
+  <button (click)="create()">Submit</button>
+</div>
+
+<h5>View Todos</h5>
+<ul>
+  <li *ngFor="let t of todos">
+    {{t.description}} <button (click)="edit(t)">edit</button> <button (click)="delete(t._id)">delete</button>
+  </li>
+</ul>
