@@ -1,14 +1,32 @@
-<h1>Home</h1>
+<h1>Prayer Request Feed</h1>
+
+<h4>"...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </h4>
+<hr>
+
+<p> Connect with our community!</p>
+<p> As you read the list of requests, you can join in praying for others, 
+  sending encourgament through replying to others' requests, receiving updates from others 
+  and giving updates on your prayer requests. 
+  We are joining together as a global family through prayers, sorrows, and celebrations.</p>
+<hr>
 
 <div>
-  <h5>Create Todo</h5>
+  <h5>Add New Prayer Request</h5>
   <input type="description" placeholder="description" [(ngModel)]="todo.description" />
   <button (click)="create()">Submit</button>
 </div>
 
-<h5>View Todos</h5>
+<hr>
+<h5>View Current Prayer Requests</h5>
+<p> Connect with our community!</p>
+<p> As you read the list of requests, you can join in praying for others, 
+  sending encourgament through replying to others' requests, receiving updates from others 
+  and giving updates on your prayer requests. 
+  We are joining together as a global family through prayers, sorrows, and celebrations.</p>
 <ul>
   <li *ngFor="let t of todos">
-    {{t.description}} <button (click)="edit(t)">edit</button> <button (click)="delete(t._id)">delete</button>
+    {{t.description}} <button (click)="edit(t)">Reply</button> 
   </li>
 </ul>
+
+<!--Add a section for updating their prayer requests <button (click)="delete(t._id)">delete</button> -->
