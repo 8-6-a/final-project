@@ -8,14 +8,15 @@ import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-
+import { ActiveprayerComponent } from './activeprayer/activeprayer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ActiveprayerComponent,
   ],
   imports: [
     BrowserModule,

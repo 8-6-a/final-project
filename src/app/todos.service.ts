@@ -11,6 +11,7 @@ export class TodosService {
   }
 
   createTodo(todo) {
+    console.log(todo)
     return this.http.post(`${window.location.origin}/todos`, todo);
   }
 
@@ -20,6 +21,10 @@ export class TodosService {
 
   deleteTodo(id) {
     return this.http.delete(`${window.location.origin}/todos/${id}`);
+  }
+
+  markPrayerAnswered(id) {
+    return this.http.put(`${window.location.origin}/todos/answered/${id}`, null)
   }
 
   constructor(private http: HttpClient) {
