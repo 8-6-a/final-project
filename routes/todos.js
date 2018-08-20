@@ -48,4 +48,21 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+router.put('/answered/:id', (req, res) => {
+    Todo.findById(req.params.id, (err, todo) => {
+        if(err) {
+            res.send(err)
+        } else {
+            todo.prayerstatus = true;
+            todo.save((err) => {
+                if(err) {
+                    res.send(err)
+                } else {
+                    res.end()
+                }
+            })
+        }
+    })
+})
+
 module.exports = router;

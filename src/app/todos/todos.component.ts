@@ -23,6 +23,11 @@ export class TodosComponent implements OnInit {
     });
   }
 
+  answeredPrayer(id){
+    this.todosService.markPrayerAnswered(id).subscribe(() => {
+    });
+  }
+
   delete(id) {
     this.todosService.deleteTodo(id).subscribe(() => {
       window.location.reload();
@@ -31,6 +36,7 @@ export class TodosComponent implements OnInit {
 
   constructor(private todosService: TodosService) {
     this.todosService.getTodos().subscribe((data: any) => {
+      console.log(data)
       this.todos = data;
     });
   }

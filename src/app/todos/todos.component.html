@@ -15,16 +15,16 @@
     <button (click)="update()">Update</button>
 <hr>
 
-<h5> Current Prayer Requests</h5>
+<h5> Active Prayer Requests</h5>
 <p>Below is an active list of needs from people like you around the world. You can pray, read, and reply.
   We are joining together as a global family through prayers, sorrows, and celebrations.</p>
 <ul>
   <li *ngFor="let t of todos">
     <!--Need to confirm this sets a reply NOT replace the current request-->
-    {{t.description}} <button (click)="edit(t)">Reply</button> 
+    {{t.description}} <button (click)="answeredPrayer(t_id)">Answered</button> 
   </li>
 </ul>
-<input type="text" onkeyup="myFunction()" placeholder="Search for needs..">
+<!--<input type="text" onkeyup="myFunction()" placeholder="Search for needs.."> -->
 <hr>
 
 <h5> Testimonials</h5>
