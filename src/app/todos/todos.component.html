@@ -7,15 +7,14 @@
 <p>Thank you for taking the bold step! We want to come alongside you in your time of need.</p>
 <input type="description" placeholder="description" [(ngModel)]="todo.description" />
     <button (click)="create()">Submit</button>
-    <button (click)="edit(t._id)">Edit</button>
 <hr>
 <h5> Active Prayer Requests</h5>
 <p>Below is an active list of needs from people like you around the world. You can pray, read, and reply.
   We are joining together as a global family through prayers, sorrows, and celebrations.</p>
 <ul>
   <li *ngFor="let t of todos">
-    <!--Need to confirm this sets a reply NOT replace the current request-->
     {{t.description}} <button (click)="answeredPrayer(t_id)">Answered</button> 
+    <button (click)="edit(t._id)">Edit</button>
   </li>
 </ul>
 <hr>
