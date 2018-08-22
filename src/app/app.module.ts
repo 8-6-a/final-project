@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { TodosService } from './todos.service';
-import { TodosComponent } from './todos/todos.component';
+import { PrayersService } from './prayers.service';
+import { PrayersComponent } from './prayers/prayers.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -13,7 +13,7 @@ import { ActiveprayerComponent } from './activeprayer/activeprayer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent,
+    PrayersComponent,
     RegisterComponent,
     LoginComponent,
     ActiveprayerComponent,
@@ -24,7 +24,7 @@ import { ActiveprayerComponent } from './activeprayer/activeprayer.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [TodosService],
+  providers: [PrayersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,11 +25,11 @@ var corsOptions = {
 
 // !!! DEVELOPMENT ONLY (end) !!! //
 
-require('./models/todo');
+require('./models/prayer');
 require('./models/user');
-const todos = require('./routes/todos');
+const prayers = require('./routes/prayers');
 const users = require('./routes/users');
-app.use('/todos', todos);
+app.use('/prayers', prayers);
 app.use('/users', users);
 
 
