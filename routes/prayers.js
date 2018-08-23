@@ -1,12 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
-let Todo = mongoose.model('Todo');
+let Prayer = mongoose.model('Prayer');
 
 router.post('/', (req, res) => {
-    let newTodo = new Todo();
-    newTodo.description = req.body.description;
-    newTodo.save((err) => {
+    let newPrayer = new Prayer();
+    newPrayer.description = req.body.description;
+    newPrayer.prayerstatus = false;
+    newPrayer.save((err) => {
         if(err) {
             res.send(err)
         } else {
@@ -16,18 +17,18 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    Todo.find({}).then((orders) => {
+    Prayer.find({}).then((orders) => {
         res.json(orders)
     })
 })
 
 router.put('/:id', (req, res) => {
-    Todo.findById(req.params.id, (err, todo) => {
+    Prayer.findById(req.params.id, (err, Prayer) => {
         if(err) {
             res.send(err)
         } else {
-            todo.description = req.body.description;
-            todo.save((err) => {
+            Prayer.description = req.body.description;
+            Prayer.save((err) => {
                 if(err) {
                     res.send(err)
                 } else {
@@ -39,7 +40,7 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    Todo.deleteOne({_id: req.params.id}, (err) => {
+    Prayer.deleteOne({_id: req.params.id}, (err) => {
         if(err) {
             res.send(err)
         } else {
@@ -49,14 +50,15 @@ router.delete('/:id', (req, res) => {
 })
 
 router.put('/answered/:id', (req, res) => {
-    Todo.findById(req.params.id, (err, todo) => {
+    Prayer.findById(req.params.id, (err, Prayer) => {
         if(err) {
             res.send(err)
         } else {
-            todo.prayerstatus = true;
-            todo.save((err) => {
+            Prayer.prayerstatus = true;
+            Prayer.save((err) => {
                 if(err) {
                     res.send(err)
+                    console.log("error with your answered router")
                 } else {
                     res.end()
                 }
