@@ -8,30 +8,19 @@
 <input type="description" placeholder="description" [(ngModel)]="todo.description" />
     <button (click)="create()">Submit</button>
 <hr>
-
-<h4> Update  your Prayer</h4>
-<p>We want to be in the know! Please update your prayer requests by logging in to your account so we can stay actively praying for your current need.</p>
-<input type="description" placeholder="description" [(ngModel)]="todo.description" />
-    <button (click)="update()">Update</button>
-<hr>
-
 <h5> Active Prayer Requests</h5>
 <p>Below is an active list of needs from people like you around the world. You can pray, read, and reply.
   We are joining together as a global family through prayers, sorrows, and celebrations.</p>
 <ul>
   <li *ngFor="let t of todos">
-    <!--Need to confirm this sets a reply NOT replace the current request-->
     {{t.description}} <button (click)="answeredPrayer(t_id)">Answered</button> 
+    <button (click)="edit(t._id)">Edit</button>
   </li>
 </ul>
-<!--<input type="text" onkeyup="myFunction()" placeholder="Search for needs.."> -->
 <hr>
 
 <h5> Testimonials</h5>
-<p>Read the celebrations!</p>\
+<p>Read the celebrations!</p>
 <!-- Need to connect the search bar-->
-<input type="text" onkeyup="myFunction()" placeholder="Search for names..">
+<input type="text" onkeyup="myFunction()" placeholder="Search...">
 
-
-
-<!--Add a section for updating their prayer requests <button (click)="delete(t._id)">delete</button> -->
