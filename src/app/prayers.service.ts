@@ -16,8 +16,8 @@ export class PrayersService {
     return this.http.post(`${window.location.origin}/prayers`, prayer);
   }
 
-  editPrayers(prayer, id) {
-    return this.http.put(`${window.location.origin}/prayers/${id}`, {description: prayer});
+  editPrayers(id, description) {
+    return this.http.put(`${window.location.origin}/prayers/${id}`, {description});
   }
 
   deletePrayers(id) {
@@ -25,7 +25,6 @@ export class PrayersService {
   }
 
   markPrayerAnswered(id) {
-    console.log("marking prayer answered");
     return this.http.put(`${window.location.origin}/prayers/answered/${id}`, null);
   }
 

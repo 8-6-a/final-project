@@ -6,7 +6,7 @@ let Prayer = mongoose.model('Prayer');
 router.post('/', (req, res) => {
     let newPrayer = new Prayer();
     newPrayer.description = req.body.description;
-    newPrayer.prayerstatus = false;
+    newPrayer.prayerAnswered = false;
     newPrayer.save((err) => {
         if(err) {
             res.send(err)
@@ -54,7 +54,8 @@ router.put('/answered/:id', (req, res) => {
         if(err) {
             res.send(err)
         } else {
-            Prayer.prayerstatus = true;
+            Prayer.prayerAnswered = Set.prayerAnswered = true;
+            console.log("set the prayer status true")
             Prayer.save((err) => {
                 if(err) {
                     res.send(err)

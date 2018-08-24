@@ -17,17 +17,17 @@ export class PrayersComponent implements OnInit {
     });
   }
 
-  edit(prayer) {
+  edit(id, description) {
     console.log("edit prayers");
-    const newPrayer = window.prompt(`Update Prayer: ${prayer.description}`);
-    this.PrayersService.editPrayers(newPrayer, prayer._id).subscribe(() => {
+    const newPrayer = window.prompt(`Update Prayer:`);
+    this.PrayersService.editPrayers(id, newPrayer).subscribe(() => {
       window.location.reload();
     });
   }
 
   answeredPrayer(id){
     this.PrayersService.markPrayerAnswered(id).subscribe(() => {
-      
+      window.location.reload();
     });
   }
 

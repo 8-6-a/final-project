@@ -11,21 +11,28 @@
 <h5> Active Prayer Requests</h5>
 <p>Below is an active list of needs from people like you around the world. You can pray, read, and reply.
   We are joining together as a global family through prayers, sorrows, and celebrations.</p>
-<ul>
-  <li *ngFor="let p of prayers">
-    {{p.description}} <button (click)="answeredPrayer(p_id)">Answered</button> 
-    <button (click)="edit(p._id)">Edit</button>
-  </li>
-</ul>
+  <div>
+    <ul>
+      <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
+        <li *ngIf="!prayer.prayerAnswered">
+          {{prayer.description}}
+          <button (click)="answeredPrayer(prayer._id)">Answered</button>
+          <button (click)="edit(prayer._id)">Edit</button>
+        </li>
+      </ng-template>
+    </ul>
+  </div>  
 <hr>
 
-<h5> Testimonials</h5>
-<p>Read the celebrations!</p>
-
-<ul>
-  <!--<li *ngFor="let t of prayerstatus = true">
-    {{t.description}} 
-    <button (click)="edit(a._id)">Edit</button>
-  </li>-->
-</ul>
-
+<h5>Testimonies</h5>
+<p>Read the Celebrations!</p>
+  <div>
+    <ul>
+      <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
+        <li *ngIf="prayer.prayerAnswered">
+          {{prayer.description}}
+          <button (click)="edit(prayer._id)">Edit</button>
+        </li>
+      </ng-template>
+    </ul>
+  </div>

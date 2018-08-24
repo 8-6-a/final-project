@@ -9,9 +9,10 @@ router.post('/register', (req, res) => {
     newUser.setPassword(req.body.password);
     newUser.save((err) => {
         if(err) {
-            res.send(err);
+            res.send(err)
         } else {
             res.json({token: newUser.generateJWT()})
+            
         }
     })
 })
@@ -24,7 +25,7 @@ router.post('/login', ((req, res) => {
             if(user.validatePassword(req.body.password)) {
                 res.json({token: user.generateJWT()})
             } else {
-                res.json('Incorrect Password')
+                res.json('Incorrect Password');
             }
         }
     }))

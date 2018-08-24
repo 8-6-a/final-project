@@ -6,7 +6,7 @@ let passport = require('passport');
 const bodyParser = require("body-parser");
 const cors = require('cors')
 
-mongoose.connect('mongodb://isaac:abc123@ds125872.mlab.com:25872/the-group-db'),{ useNewUrlParser: true };
+mongoose.connect('mongodb://admin1:admin123@ds227332.mlab.com:27332/prayer-app'),{ useNewUrlParser: true };
 
 // express config
 const app = express();
@@ -37,9 +37,8 @@ var distDir = __dirname + "/dist/group-project/";
 app.use(express.static(distDir));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname + "/dist/group-project/"))
+    res.sendFile(path.join(__dirname + "/dist/group-project/index.html"))
 })
 
 // server config
 app.listen(process.env.PORT || 8080);
-
