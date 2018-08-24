@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: PrayersComponent },
@@ -19,6 +19,6 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
 }

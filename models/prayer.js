@@ -6,4 +6,5 @@ let PrayerSchema = new mongoose.Schema({
 });
 
 let Prayer = mongoose.model('Prayer', PrayerSchema);
+
 module.exports = Prayer;
