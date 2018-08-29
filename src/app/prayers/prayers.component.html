@@ -1,6 +1,6 @@
 <h1>Prayer Wall</h1>
 
-<h4>"...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </h4>
+<h3>"...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </h3>
 <hr>
 
 <h4> Submit a Prayer</h4>
@@ -8,7 +8,7 @@
 <input type="description" placeholder="description" [(ngModel)]="prayer.description" />
     <button (click)="create()">Submit</button>
 <hr>
-<h5> Active Prayer Requests</h5>
+<h4> Active Prayer Requests</h4>
 <p>Below is an active list of needs from people like you around the world. You can pray, read, and reply.
   We are joining together as a global family through prayers, sorrows, and celebrations.</p>
   <div>
@@ -24,7 +24,7 @@
   </div>  
 <hr>
 
-<h5>Testimonies</h5>
+<h4>Testimonies</h4>
 <p>Read the Celebrations!</p>
   <div>
     <ul>
@@ -32,6 +32,7 @@
         <li *ngIf="prayer.prayerAnswered">
           {{prayer.description}}
           <button (click)="edit(prayer._id)">Edit</button>
+          <button (click)="delete(prayer._id)">Delete</button>
         </li>
       </ng-template>
     </ul>
