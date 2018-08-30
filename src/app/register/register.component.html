@@ -1,9 +1,35 @@
-<div>
-  <h1>Register</h1>
-  <input type="email" placeholder="email" [(ngModel)]="user.email"/>
-  <input type="password" placeholder="password" [(ngModel)]="user.password" />
-  <button (click)="register()">Register</button>
-  <div>
-    <p> Already a member? Go to the <a href="/login">Login Page </a></p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="register.component.css">
+</head>
+<body>
+  
+  <h1 style="color: rgb(0, 0, 0); font-size: 30pt; text-align: center">Prayer App</h1>
+  <h3 style="color: rgb(0, 0, 0); font-size: 16pt; text-align: center">Register</h3>
+
+  <div class="imgcontainer">
+    <img src="assets/marchOnlogo01.jpg" class="logo">
   </div>
-</div>
+    
+<form>
+  <div class="container" style="text-align: center">
+    <input type="email" name="uname" placeholder="Email" [(ngModel)]="user.email"/>
+    <br>
+
+    <input type="password" name="psw" placeholder="Password" [(ngModel)]="user.password" />
+    <br>
+
+    <button (click)="register()">Register</button>
+    </div>
+
+  
+
+  <div class="container" style="text-align: center">
+    <span class="psw"> Already a member? Go to the <a href="/login">Login</a></span>
+  </div>
+</form>
+
+</body>
+</html>

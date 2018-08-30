@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class PrayersService {
 
   getPrayers() {
-    console.log("getting prayers");
-    return this.http.get(`${window.location.origin}/prayers`);
+  console.log("getting prayers");
+  return this.http.get(`${window.location.origin}/prayers`);
   }
 
   createPrayers(prayer) {
@@ -29,6 +30,12 @@ export class PrayersService {
   }
 
   constructor(private http: HttpClient) {
-
+    let token = localStorage.getItem ('token');
+    if(!token) {
+      window.location.href = '/login';
+    }
+      else(token) => {
+        window.location.href = '/home';
+      }
+    }
   }
-}

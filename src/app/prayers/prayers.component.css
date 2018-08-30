@@ -1,2 +1,20 @@
-
+ul{
+    width: 325px;
+    height: 400px; 
+    overflow: auto;
+}
+button{
+    background-color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+button:hover {
+    background-color: rgb(169, 252, 255); 
+}
+button:active {
+    background-color: aliceblue;
+    box-shadow: 0 5px #667;
+    transform: translateY(4px);
+}
 
