@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PrayersService } from '../prayers.service';
 
 @Component({
   selector: 'app-prayers',
   templateUrl: './prayers.component.html',
-  styleUrls: ['./prayers.component.css']
+  styleUrls: ['./prayers.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PrayersComponent implements OnInit {
   prayers: any;
