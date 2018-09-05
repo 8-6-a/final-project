@@ -1,17 +1,15 @@
-<div class="header">
+<div class="header" id="navHeader">
   <h1 class="title">Prayer App</h1>
-  <br>
-  <!-- <h5 class="tagline">"...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </h5> -->
-<hr class="line">
-<div class="header-right">
-  <a class="home" href="/home">Home</a>
-  <a href="/home">Add New Prayer</a>
-  <a href="/home">Active Prayer List</a>
-  <a href= "/home">Testimonials</a>
-  <a href="/login">Signout</a>
-</div>
+  <a href="/login" >Signout</a>
+  <a href="/testimonies" >Testimonies</a>
+  <a href="/active">Active Prayer List</a>
+  <a href="/submit" >Submit a Prayer </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-reorder"></i>
+  </a>
 </div>
 
+<div class="body">
 <h4> Submit a Prayer</h4>
 <p>Thank you for taking the bold step! We want to come alongside you in your time of need.</p>
 <input type="description" placeholder="description" [(ngModel)]="prayer.description" />
@@ -45,7 +43,8 @@
       </ng-template>
     </ul>
   </div>
+</div>
 
   <div class= "footer">
-   <h3>...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </h3>
-  </div>
+    <p>...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </p>
+   </div>
