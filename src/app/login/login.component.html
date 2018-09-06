@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="login.component.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="login.component.css">
+  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Lora" rel="stylesheet">
 </head>
+
 <body>
 
-<h1 style="color: rgb(0, 0, 0); font-size: 24pt; text-align: center">Prayer App</h1>
-<h3 style="color: rgb(0, 0, 0); font-size: 18pt; text-align: center">Login</h3>
+  <h1 style="color: rgb(0, 0, 0); font-size: 30pt; text-align: center">Prayer App</h1>
+  <h3 style="color: rgb(0, 0, 0); font-size: 25pt; text-align: center">Login</h3>
 
-<div class="imgcontainer">
-  <img src="assets/marchOnlogo01.jpg" class="logo">
-</div>
-
-<form>
-  <div class="container" style="text-align: center">
-    <input type="email" name="uname" placeholder="Email" [(ngModel)]="user.email">
-    <br>
-
-    <input type="password" name="psw" placeholder="Password" [(ngModel)]="user.password">
-    <br>
-
-    <button (click)="login()">Login</button>
-</div>
-
-  
-
-  <div class="container" style="text-align: center">
-    <span class="psw">New to the Prayer App? <a href="/register">Register Now</a></span>
+  <div class="imgcontainer">
+    <img src="assets/marchOnlogo01.jpg" class="logo">
   </div>
-</form>
- 
+
+  <form>
+    <div class="container" style="text-align: center">
+      <input type="email" name="uname" placeholder="Email" [(ngModel)]="user.email">
+      <br>
+
+      <input type="password" name="psw" placeholder="Password" [(ngModel)]="user.password">
+      <br>
+
+      <button (click)="login()">Login</button>
+    </div>
+
+
+
+    <div class="container" style="text-align: center">
+      <span class="psw">New to the Prayer App? <a href="/register">Register Now</a></span>
+    </div>
+  </form>
+
 </body>
+
 </html>
