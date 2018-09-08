@@ -1,88 +1,91 @@
 body {
-    font-family: 'Homemade Apple', cursive;
+  font-family: 'Homemade Apple', cursive;
 }
 
-h1{
-    padding-top: 2px;
-    margin: 0;
+h1 {
+  padding-top: 2px;
+  margin: 0;
 }
 
-h3{
-    padding-top: 2px;
-    margin: 0;
-    font-family: 'Lora', serif;
+h3 {
+  padding-top: 2px;
+  margin: 0;
+  font-family: 'Lora', serif;
 }
 
-input[type=email], input[type=password] {
-    width: 30%;
-    padding: 15px;
-    margin: 8px;
-    display: inline-block;
-    border: 1px solid  rgb(0, 0, 0);
-    box-sizing: border-box;
-    font-family: 'Lora', serif;
+input[type=email],
+input[type=password] {
+  width: 30%;
+  padding: 15px;
+  margin: 8px;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
 }
 
 button {
-    background: url(../../assets/forrest02.jpg);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    max-width: 100%;
-    font-size: 20px;
-    font-family: 'Lora', serif;
+  background: url(../../assets/forrest02.jpg);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  max-width: 100%;
+  font-size: 20px;
+  font-family: 'Lora', serif;
 }
 
 button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 button:active {
-    background-color: aliceblue;
-    box-shadow: 0 5px #667;
-    transform: translateY(4px);
+  background-color: aliceblue;
+  box-shadow: 0 5px #667;
+  transform: translateY(4px);
 }
 
 .imgcontainer {
-    text-align: center;
-    padding: 5px;
+  text-align: center;
+  padding: 5px;
 }
 
 img.logo {
-    max-width: 16%;
-    min-width: 12%;
-    padding:0;
+  max-width: 16%;
+  min-width: 12%;
+  padding: 0;
 }
 
 span.psw {
-    float: center;
-    padding-top: 16px;
-    text-decoration: none;
-    font-size: 22px;
-    text-align: center;
-    font-family: 'Lora', serif;
+  float: center;
+  padding-top: 16px;
+  text-decoration: none;
+  font-size: 22px;
+  text-align: center;
+  font-family: 'Lora', serif;
 }
 
-a:link, a:visited {
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Lora', serif;
-}
-a:hover, a:active{
-    color:rgb(3, 77, 58);
-    font-size: 18px;
-    text-shadow: 3px;
-    font-weight: bold;
-    font-family: 'Lora', serif;
+a:link,
+a:visited {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Lora', serif;
 }
 
+a:hover,
+a:active {
+  color: rgb(3, 77, 58);
+  font-size: 18px;
+  text-shadow: 3px;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+}
 
 @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
+  span.psw {
+    display: block;
+    float: none;
+  }
 }

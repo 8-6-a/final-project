@@ -15,7 +15,7 @@ export class ActiveprayerService {
   }
 
   editActiveprayer(activeprayer, id) {
-    return this.http.put(`${window.location.origin}/activeprayer/${id}`, {description: activeprayer});
+    return this.http.put(`${window.location.origin}/activeprayer/${id}`, { description: activeprayer });
   }
 
   deleteActiveprayer(id) {

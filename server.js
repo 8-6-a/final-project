@@ -6,7 +6,9 @@ let passport = require('passport');
 const bodyParser = require("body-parser");
 const cors = require('cors')
 
-mongoose.connect('mongodb://admin1:admin123@ds227332.mlab.com:27332/prayer-app'),{ useNewUrlParser: true };
+mongoose.connect('mongodb://admin1:admin123@ds227332.mlab.com:27332/prayer-app'), {
+  useNewUrlParser: true
+};
 
 // express config
 const app = express();
@@ -15,14 +17,12 @@ app.use(passport.initialize());
 
 
 // !!! DEVELOPMENT ONLY (start) !!! //
-
 var corsOptions = {
-     origin: 'http://localhost:8080',
-     optionsSuccessStatus: 200 
- }
-  
- app.use(cors(corsOptions))
+  origin: 'http://localhost:8080',
+  optionsSuccessStatus: 200
+}
 
+app.use(cors(corsOptions))
 // !!! DEVELOPMENT ONLY (end) !!! //
 
 require('./models/prayer');
@@ -37,7 +37,7 @@ var distDir = __dirname + "/dist/group-project/";
 app.use(express.static(distDir));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname + "/dist/group-project/index.html"))
+  res.sendFile(path.join(__dirname + "/dist/group-project/index.html"))
 })
 
 // server config
