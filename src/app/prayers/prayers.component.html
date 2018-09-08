@@ -4,11 +4,11 @@
 
 <!-- Header section showing the header and a sub menu with links to all of the specific sections. -->
 <div class="header" id="navHeader">
-  <h1 class="title" style="font-family: 'Homemade Apple', cursive">Prayer App</h1>
-  <a href="/login" >Signout</a>
-  <a href="/testimonies" >Testimonies</a>
-  <a href="/active">Active Prayer List</a>
-  <a href="/submit" >Submit a Prayer </a>
+  <h1 class="title">Prayer App</h1>
+  <a href="/login" (click)="logout()">Signout</a>
+  <a (click)="scrollToElement(item3)">Testimonies</a>
+  <a (click)="scrollToElement(item2)">Active Prayer List</a>
+  <a (click)="scrollToElement(item1)">Submit a Prayer </a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-reorder"></i>
   </a>
@@ -16,25 +16,23 @@
 
 
 <!-- Submit a prayer section on the first row of our grid -->
-<div id="item1" class="item1" style="border: solid white 1px">
+<div #item1 id="item1" class="flex1-container">
   <h3 class="title1"> Submit a Prayer</h3>
-  <p>Thank you for taking the bold step! We want to come alongside you in your time of need.</p>
-  <input class="submit" type="description" placeholder="Description" [(ngModel)]="prayer.description" />
-  <button (click)="create()">Submit</button>
+  <textarea rows="4" class="txtarea" required type="description" placeholder="Description" [(ngModel)]="prayer.description"></textarea>
+  <button id="submit" class="buttonsubmit" (click)="create()">Submit</button>
 </div>
 
 <!-- Active Prayer request section that shows the active and editable prayer request -->
-<div id="item2" class="item2" style="border: solid white 1px">
-  <h3 class="title2"> Active Prayer Requests</h3>
-  <p>Below is an active list of needs from people like you around the world. You can pray, read, and reply.</p>
-  <p> We are joining together as a global family through prayers, sorrows, and celebrations.</p>
-  <div>
-    <ul>
+<div #item2 id="item2" class="flex2-container">
+  <h3 class="title2"> Active Prayers</h3>
+  <div class="flexulactive-container">
+    <ul class="active">
       <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
         <li *ngIf="!prayer.prayerAnswered">
-          {{prayer.description}}
-          <button (click)="answeredPrayer(prayer._id)">Answered</button>
-          <button (click)="edit(prayer._id)">Edit</button>
+          {{prayer.description}}<br>
+          <button class="buttonanswer" (click)="answeredPrayer(prayer._id)">Answered</button>
+          <br>
+          <button class="buttonedit" (click)="edit(prayer._id)">Edit</button>
         </li>
       </ng-template>
     </ul>
@@ -42,20 +40,21 @@
 </div>
 
 <!-- This is the Testimony section showing all answered prayers.  -->
-<div id="item3" class="item3" style="border: solid white 1px">
+<div #item3 id="item3" class="flex3-container">
   <h3 class="title3">Testimonies</h3>
-  <p>Read the Celebrations!</p>
-  <ul>
-    <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
-      <li *ngIf="prayer.prayerAnswered">
-        {{prayer.description}}
-        <button (click)="edit(prayer._id)">Edit</button>
-      </li>
-    </ng-template>
-  </ul>
+  <div class="flexultest-container">
+    <ul class="test">
+      <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
+        <li *ngIf="prayer.prayerAnswered">
+          {{prayer.description}}<br>
+          <button class="buttonedit" (click)="edit(prayer._id)">Edit</button>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
 </div>
 
 <!-- footer section  -->
-  <div class= "footer">
-    <p>...for My house will be called a house of Prayer for the nations." Isaiah 56:7 </p>
-   </div>
+<div class="footer">
+  <p>...for My house will be called a house of Prayer for the nations." Isaiah 56:7</p>
+</div>

@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class PrayersService {
 
   getPrayers() {
-  console.log("getting prayers");
-  return this.http.get(`${window.location.origin}/prayers`);
+    console.log("getting prayers");
+    return this.http.get(`${window.location.origin}/prayers`);
   }
 
   createPrayers(prayer) {
@@ -18,7 +18,7 @@ export class PrayersService {
   }
 
   editPrayers(id, description) {
-    return this.http.put(`${window.location.origin}/prayers/${id}`, {description});
+    return this.http.put(`${window.location.origin}/prayers/${id}`, { description });
   }
 
   deletePrayers(id) {
@@ -30,12 +30,12 @@ export class PrayersService {
   }
 
   constructor(private http: HttpClient) {
-    let token = localStorage.getItem ('token');
-    if(!token) {
+    let token = localStorage.getItem('token');
+    if (!token) {
       window.location.href = '/login';
     }
-      else(token) => {
-        window.location.href = '/home';
-      }
+    else (token) => {
+      window.location.href = '/home';
     }
   }
+}

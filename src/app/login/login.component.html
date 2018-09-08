@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
   <h1 style="color: rgb(0, 0, 0); font-size: 30pt; text-align: center">Prayer App</h1>
   <h3 style="color: rgb(0, 0, 0); font-size: 25pt; text-align: center">Login</h3>
 
@@ -18,16 +17,14 @@
 
   <form>
     <div class="container" style="text-align: center">
-      <input type="email" name="uname" placeholder="Email" [(ngModel)]="user.email">
+      <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required type="email" name="uname" placeholder="Email" [(ngModel)]="user.email">
       <br>
 
-      <input type="password" name="psw" placeholder="Password" [(ngModel)]="user.password">
+      <input required type="password" name="psw" placeholder="Password" [(ngModel)]="user.password">
       <br>
 
       <button (click)="login()">Login</button>
     </div>
-
-
 
     <div class="container" style="text-align: center">
       <span class="psw">New to the Prayer App? <a href="/register">Register Now</a></span>
