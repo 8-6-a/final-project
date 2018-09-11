@@ -26,10 +26,10 @@ export class PrayersComponent implements OnInit {
   // edits a current prayer
   edit(id, description) {
     console.log("edit prayers");
-    const newPrayer = window.prompt(`Update Prayer:`,this.prayers.id.description);
+    const newPrayer = window.prompt(`Update Prayer:`, description);
     this.PrayersService.editPrayers(id, newPrayer).subscribe(() => {
-      this._flashMessagesService.show('You have edited a Prayer, View it in Active Prayers',{ cssClass:'alert-success', timeout:3000 })
       window.location.reload()
+      this._flashMessagesService.show('You have edited a Prayer, View it in Active Prayers',{ cssClass:'alert-success', timeout:3000 })
     });
   }
 

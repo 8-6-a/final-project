@@ -23,13 +23,15 @@ router.post('/login', ((req, res) => {
   User.findOne({email: req.body.email}, ((err, user) => {
       if(err) {
           res.sendStatus(500)
+      } else if(!user) {
+        res.json('Account does not exist');
       } else {
-          if(user.validatePassword(req.body.password)) {
-              res.json({token: user.generateJWT()})
-          } else {
-              res.json('Incorrect Password');
-          }
-      }
+        if(user.validatePassword(req.body.password)) {
+            res.json({token: user.generateJWT()})
+        } else {
+            res.json('Incorrect password');
+        }
+    }
   }))
 }))
 

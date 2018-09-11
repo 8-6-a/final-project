@@ -9,19 +9,17 @@
 
 <body>
   <h1 class="title" style="color: rgb(0, 0, 0); font-size: 30pt; text-align: center">Prayer App</h1>
-  <h3 class="login" style="color: rgb(0, 0, 0); font-size: 25pt; text-align: center">Login</h3>
+  <h3 class="login" style="color: rgb(0, 0, 0); font-size: 25pt; text-align: center">{{header}}</h3>
 
   <div class="imgcontainer">
     <img src="assets/marchOnlogo01.jpg" class="logo">
   </div>
-
+  
   <form #loginForm="ngForm">
     <div class="container" style="text-align: center">
-      <input type="email" name="uname" placeholder="Email" class="form-control" required [(ngModel)]="user.email"
-        #uname="ngModel" >
-      <div [hidden]="uname.valid || uname.pristine" class="alert alert-danger">
-        Email is required
-      </div>
+      <input type="email" placeholder="Enter your email" name="uname" 
+      pattern="[a-z0-9._%+-]{1,40}[@]{1}[a-z]{1,10}[.]{1}[a-z]{3}" 
+       class="form-control" required [(ngModel)]="user.email" #uname="ngModel" >
       <br>
 
       <input type="password" name="psw" placeholder="Password" class="form-control" required [(ngModel)]="user.password"
@@ -31,7 +29,7 @@
       </div>
       <br>
 
-      <button (click)="login()" class="btn btn-success" [disabled]="!loginForm.form.valid">Login</button>
+      <button input type= "submit" (click)="login()" class="btn btn-success" [disabled]="!loginForm.form.valid">Login</button>
     </div>
 
     <div class="container" style="text-align: center">

@@ -58,7 +58,6 @@
 
   .flex3-container {
     background-attachment: scroll !important;
-    margin-bottom: 80px !important;
   }
 }
 /* End Responsive Styling */
@@ -173,7 +172,7 @@ h1 {
   grid-row-start: 3;
   grid-row-end: 4;
   height: 500px;
-  margin-bottom: .5em;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -194,6 +193,7 @@ h1 {
   height: 30%;
   width: 50%;
   vertical-align: -40%;
+  color: black;
 }
 
 .flex1-container textarea::placeholder{
@@ -317,11 +317,11 @@ button:active {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 8%;
+  height: 10%;
   background-image: url("../../assets/prayer09new.jpg");
   color: white;
   text-align: center;
-  padding-top: 1.5em;
+  padding-top: .8em;
   font-family: "Homemade Apple", 'cursive';
 }
 /* End Footer Styling */
