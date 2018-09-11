@@ -8,22 +8,30 @@
 </head>
 
 <body>
-  <h1 style="color: rgb(0, 0, 0); font-size: 30pt; text-align: center">Prayer App</h1>
-  <h3 style="color: rgb(0, 0, 0); font-size: 25pt; text-align: center">Register</h3>
+  <h1 class= "title" style="color: rgb(0, 0, 0); font-size: 30pt; text-align: center">Prayer App</h1>
+  <h3 class= "register" style="color: rgb(0, 0, 0); font-size: 25pt; text-align: center">Register</h3>
 
   <div class="imgcontainer">
     <img src="assets/marchOnlogo01.jpg" class="logo">
   </div>
 
-  <form>
+  <form #registerForm="ngForm">
     <div class="container" style="text-align: center">
-      <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required type="email" name="uname" placeholder="Email" [(ngModel)]="user.email">
+      <input type="email" name="uname" placeholder="Email" class="form-control" required [(ngModel)]="user.email"
+        #uname="ngModel">
+      <div [hidden]="uname.valid || uname.pristine" class="alert alert-danger">
+        Email is required
+      </div>
       <br>
 
-      <input required type="password" name="psw" placeholder="Password" [(ngModel)]="user.password">
+      <input type="password" name="psw" placeholder="Password" class="form-control" required [(ngModel)]="user.password"
+        #psw="ngModel">
+      <div [hidden]="psw.valid || psw.pristine" class="alert alert-danger">
+        Password is required
+      </div>
       <br>
 
-      <button (click)="register()">Register</button>
+      <button (click)="register()" class="btn btn-success" [disabled]="!registerForm.form.valid">Register</button>
     </div>
 
     <div class="container" style="text-align: center">

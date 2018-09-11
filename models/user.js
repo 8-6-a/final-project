@@ -3,8 +3,8 @@ let crypto = require('crypto');
 let jwt = require('jsonwebtoken');
 
 let UserSchema = new mongoose.Schema({
-  email: String,
-  passwordHash: String,
+  email: {type: String },
+  passwordHash: {type: String },
   salt: String,
 });
 
@@ -22,7 +22,6 @@ UserSchema.method("generateJWT", function () {
   return jwt.sign({
     id: this._id,
     email: this.email,
-    exp: 1480870617,
   }, 'SecretKey');
 });
 

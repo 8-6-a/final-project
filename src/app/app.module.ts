@@ -9,6 +9,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ActiveprayerComponent } from './activeprayer/activeprayer.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ActiveprayerComponent } from './activeprayer/activeprayer.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FlashMessagesModule.forRoot(),
   ],
   providers: [PrayersService],
   bootstrap: [AppComponent]
