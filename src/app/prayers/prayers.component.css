@@ -66,6 +66,7 @@
 /* Header styling */
 .header {
   overflow: hidden;
+  margin-top: 0em;
   background-image: url("../../assets/prayer09new.jpg");
   color: white;
   font-family: 'Homemade Apple', 'cursive';
@@ -110,6 +111,7 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
+  padding-top: 1em;
 }
 
 .flex2-container h3 {
@@ -117,6 +119,7 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
+  padding-top: 1em;
 }
 
 .flex3-container h3 {
@@ -124,6 +127,7 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
+  padding-top: 1em;
 }
 
 /* Grid and Flex Container Styling*/
@@ -169,7 +173,7 @@ h1 {
   grid-row-start: 3;
   grid-row-end: 4;
   height: 500px;
-  margin-bottom: 25px;
+  margin-bottom: .5em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -189,7 +193,7 @@ h1 {
 .flex1-container textarea {
   height: 30%;
   width: 50%;
-  vertical-align: -30%;
+  vertical-align: -40%;
 }
 
 .flex1-container textarea::placeholder{
@@ -281,10 +285,11 @@ button {
   font-size: 1em;
   font-family: 'Lora', serif;
   border-radius: 10px;
-  width: 35%;
+  width: 25%;
   text-align: center;
   font-weight: bolder;
   margin: 0.5em .5em .5em 1em;
+  color: black;
 }
 
 button:hover {
@@ -294,12 +299,14 @@ button:hover {
 
 button:active {
   background-color: white;
+  color:black;
   box-shadow: 0 5px url("../../assets/prayer09scroll.jpg");
   transform: translateY(2px);
 }
 
 .buttonsubmit{
-  margin-bottom: 1.5em;
+  width: 25%;
+  margin-bottom: 2em;
 }
 
 /* End Button Styling */
@@ -310,9 +317,11 @@ button:active {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 8%;
   background-image: url("../../assets/prayer09new.jpg");
   color: white;
   text-align: center;
+  padding-top: 1.5em;
   font-family: "Homemade Apple", 'cursive';
 }
 /* End Footer Styling */

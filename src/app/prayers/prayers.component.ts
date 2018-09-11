@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PrayersService } from '../prayers.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-prayers',
@@ -15,25 +16,28 @@ export class PrayersComponent implements OnInit {
 
   // creates a new prayer 
   create() {
-    console.log("create a prayer");
     this.PrayersService.createPrayers(this.prayer).subscribe(() => {
-      window.location.reload();
+      this._flashMessagesService.show('You created a Prayer, View it in Active Prayers',{ cssClass:'alert-success', timeout:3000 })
+      console.log("created a prayer")
+      window.location.reload()
     });
   }
 
   // edits a current prayer
   edit(id, description) {
     console.log("edit prayers");
-    const newPrayer = window.prompt(`Update Prayer:`);
+    const newPrayer = window.prompt(`Update Prayer:`,this.prayers.id.description);
     this.PrayersService.editPrayers(id, newPrayer).subscribe(() => {
-      window.location.reload();
+      this._flashMessagesService.show('You have edited a Prayer, View it in Active Prayers',{ cssClass:'alert-success', timeout:3000 })
+      window.location.reload()
     });
   }
 
   // answers a prayer 
   answeredPrayer(id) {
     this.PrayersService.markPrayerAnswered(id).subscribe(() => {
-      window.location.reload();
+      this._flashMessagesService.show('Praise God! Your prayer was answered, View it in Testimonies',{ cssClass:'alert-success', timeout:3000 })
+      window.location.reload()
     });
   }
 
@@ -47,6 +51,7 @@ export class PrayersComponent implements OnInit {
   // logs the user out of the session by deleting the token
   logout() {
     localStorage.removeItem('token')
+    this._flashMessagesService.show('You are logged out, Please log in to view Prayers',{ cssClass:'alert-danger', timeout:4000 })
     this.router.navigate(["/login"])
   }
 
@@ -57,6 +62,7 @@ export class PrayersComponent implements OnInit {
   }
 
   constructor(
+    private _flashMessagesService: FlashMessagesService,
     private PrayersService: PrayersService,
     private router: Router
   ) {
