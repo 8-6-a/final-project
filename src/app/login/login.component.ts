@@ -11,14 +11,18 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class LoginComponent implements OnInit {
 
   user: any
+  header: any
 
   // logs a user into the app and issues a local token 
   login() {
-    //console.log("login button")
-    this.userService.login(this.user).subscribe((data: any) => {
-      localStorage.setItem('token', data.token)
-      this._flashMessagesService.show('You have Successfully Logged In',{ cssClass:'alert-success', timeout:3000 })
-      this.router.navigate(['/home'])
+    this.userService.login(this.user).subscribe((res: any) => {
+      if(!res.token) {
+        this.header = res;
+      } else {
+        this.header = 'Success!'
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/home'])
+      }
     });
   }
 
@@ -30,5 +34,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.user = {}
+    this.header = 'Login'
   }
 }

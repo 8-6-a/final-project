@@ -18,7 +18,9 @@
 <!-- Submit a prayer section on the first row of our grid -->
 <div #item1 id="item1" class="flex1-container">
   <h3 class="title1"> Submit a Prayer</h3>
-  <textarea rows="4" class="txtarea" required type="description" placeholder="Description" [(ngModel)]="prayer.description"></textarea>
+  <textarea name="description" rows="4" class="txtarea" type="description" placeholder="Description" required [(ngModel)]="prayer.description"
+  #description="ngModel"></textarea>
+
   <button id="submit" class="buttonsubmit" (click)="create()">Submit</button>
 </div>
 

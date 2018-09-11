@@ -17,11 +17,9 @@
 
   <form #registerForm="ngForm">
     <div class="container" style="text-align: center">
-      <input type="email" name="uname" placeholder="Email" class="form-control" required [(ngModel)]="user.email"
-        #uname="ngModel">
-      <div [hidden]="uname.valid || uname.pristine" class="alert alert-danger">
-        Email is required
-      </div>
+      <input type="email" placeholder="Enter your email" 
+      pattern="[a-z0-9._%+-]{1,40}[@]{1}[a-z]{1,10}[.]{1}[a-z]{3}"
+       name="uname" class="form-control" required [(ngModel)]="user.email" #uname="ngModel">
       <br>
 
       <input type="password" name="psw" placeholder="Password" class="form-control" required [(ngModel)]="user.password"
@@ -31,7 +29,7 @@
       </div>
       <br>
 
-      <button (click)="register()" class="btn btn-success" [disabled]="!registerForm.form.valid">Register</button>
+      <button input type= "submit" (click)="register()" class="btn btn-success" [disabled]="!registerForm.form.valid">Register</button>
     </div>
 
     <div class="container" style="text-align: center">
