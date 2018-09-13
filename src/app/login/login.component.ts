@@ -8,6 +8,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   user: any
