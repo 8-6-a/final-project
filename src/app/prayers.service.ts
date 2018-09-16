@@ -1,12 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class PrayersService {
-
   getPrayers() {
     console.log("getting prayers");
     return this.http.get(`${window.location.origin}/prayers`);
@@ -17,8 +15,9 @@ export class PrayersService {
     return this.http.post(`${window.location.origin}/prayers`, prayer);
   }
 
-  editPrayers(id, description) {
-    return this.http.put(`${window.location.origin}/prayers/${id}`, { description });
+  editPrayers(id, description, userId) {
+    return this.http.put(`${window.location.origin}/prayers/${id}`, { description: description, userId: userId }
+    );
   }
 
   deletePrayers(id) {
@@ -26,16 +25,19 @@ export class PrayersService {
   }
 
   markPrayerAnswered(id) {
-    return this.http.put(`${window.location.origin}/prayers/answered/${id}`, null);
+    return this.http.put(
+      `${window.location.origin}/prayers/answered/${id}`,
+      null
+    );
   }
 
   constructor(private http: HttpClient) {
-    let token = localStorage.getItem('token');
+    let token = localStorage.getItem("token");
     if (!token) {
-      window.location.href = '/login';
-    }
-    else (token) => {
-      window.location.href = '/home';
-    }
+      window.location.href = "/login";
+    } else
+      token => {
+        window.location.href = "/home";
+      };
   }
 }

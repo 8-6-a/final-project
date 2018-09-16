@@ -32,9 +32,9 @@
       <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
         <li *ngIf="!prayer.prayerAnswered">
           {{prayer.description}}<br>
-          <button class="buttonanswer" (click)="answeredPrayer(prayer._id)">Answered</button>
+          <button class="buttonanswer" (click)="answeredPrayer(prayer._id, prayer.userId)">Answered</button>
           <br>
-          <button class="buttonedit" (click)="edit(prayer._id)">Edit</button>
+          <button class="buttonedit" (click)="edit(prayer._id, prayer.description, prayer.userId)">Edit</button>
         </li>
       </ng-template>
     </ul>
@@ -49,7 +49,7 @@
       <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
         <li *ngIf="prayer.prayerAnswered">
           {{prayer.description}}<br>
-          <button class="buttonedit" (click)="edit(prayer._id)">Edit</button>
+          <button class="buttonedit" (click)="edit(prayer._id, prayer.description, prayer.userId)">Edit</button>
         </li>
       </ng-template>
     </ul>

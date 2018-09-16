@@ -16,25 +16,28 @@ export class PrayersComponent implements OnInit {
 
   // creates a new prayer
   create() {
-    this.PrayersService.createPrayers(this.prayer).subscribe(() => {
-      this.prayer.userId === this.userId;
+    this.PrayersService.createPrayers({prayer: this.prayer, userId: this.userId}).subscribe(() => {
+      window.location.reload();
       this._flashMessagesService.show(
         "You created a Prayer, View it in Active Prayers",
         { cssClass: "alert-success", timeout: 3000 }
       );
       console.log("created a prayer");
-      window.location.reload();
     });
   }
 
   // edits a current prayer
-  edit(id, description) {
-    if (this.prayer.userId !== this.userId) {
-      alert("not allowed");
+  edit(id, description, userId) {
+    //console.log(this.prayers._id, this.userId)
+    if (userId !== this.userId) {
+      alert("not allowed")
     } else {
       console.log("edit prayers");
-      const newPrayer = window.prompt(`Update Prayer:`, description);
-      this.PrayersService.editPrayers(id, newPrayer).subscribe(() => {
+      const newPrayer = window.prompt(`Update Prayer: ${description}`);
+      if (!newPrayer){
+        return
+      }
+      this.PrayersService.editPrayers(id, newPrayer, userId).subscribe(() => {
         window.location.reload();
         this._flashMessagesService.show(
           "You have edited a Prayer, View it in Active Prayers",
@@ -45,16 +48,16 @@ export class PrayersComponent implements OnInit {
   }
 
   // answers a prayer
-  answeredPrayer(id) {
-    if (this.prayer.userId !== this.userId) {
+  answeredPrayer(id, userId) {
+    if (userId !== this.userId) {
       alert("not allowed");
     } else {
       this.PrayersService.markPrayerAnswered(id).subscribe(() => {
+        window.location.reload();
         this._flashMessagesService.show(
           "Praise God! Your prayer was answered, View it in Testimonies",
           { cssClass: "alert-success", timeout: 3000 }
         );
-        window.location.reload();
       });
     }
   }
@@ -69,11 +72,11 @@ export class PrayersComponent implements OnInit {
   // logs the user out of the session by deleting the token
   logout() {
     localStorage.removeItem("token");
+    this.router.navigate(["/login"]);
     this._flashMessagesService.show(
       "You are logged out, Please log in to view Prayers",
       { cssClass: "alert-danger", timeout: 4000 }
     );
-    this.router.navigate(["/login"]);
   }
 
   // makes the header links scroll to the page section it corresponds to
@@ -100,6 +103,7 @@ export class PrayersComponent implements OnInit {
       let payload = token ? JSON.parse(window.atob(token.split(".")[1])) : null;
       console.log(payload.id); // prints out user id
       this.userId = payload.id;
+      console.log(this.userId);
     }
   }
 

@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 
 let PrayerSchema = new mongoose.Schema({
   description: String,
+  userId: String,
   prayerAnswered: Boolean
 });
 
