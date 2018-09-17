@@ -1,5 +1,7 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
-flash-messages{
-    margin:0;
+flash-messages {
+  margin: 0;
+  text-align: center;
+
 }

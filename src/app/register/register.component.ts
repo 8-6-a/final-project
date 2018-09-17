@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   register() {
     this.userService.register(this.user).subscribe((data: any) => {
       localStorage.setItem('token', data.token)
-      this._flashMessagesService.show('You have Successfully Registered, Please login',{ cssClass:'alert-success', timeout:3000 })
+      this._flashMessagesService.show('You have Successfully Registered, Please login',{ cssClass:'alert-success', timeout:6000 })
       console.log("Registered New User")
       this.router.navigate(['/login'])
     });   
