@@ -13,7 +13,7 @@ export class PrayersComponent implements OnInit {
   prayers: any;
   prayer: any;
   userId: any;
-
+  
   // creates a new prayer
   create() {
     this.PrayersService.createPrayers({prayer: this.prayer, userId: this.userId}).subscribe(() => {
