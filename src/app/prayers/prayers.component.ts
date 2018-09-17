@@ -13,10 +13,10 @@ export class PrayersComponent implements OnInit {
   prayers: any;
   prayer: any;
   userId: any;
-  
+
   // creates a new prayer
   create() {
-    this.PrayersService.createPrayers({prayer: this.prayer, userId: this.userId}).subscribe(() => {
+    this.PrayersService.createPrayers({ prayer: this.prayer, userId: this.userId }).subscribe(() => {
       window.location.reload();
       this._flashMessagesService.show(
         "You created a Prayer, View it in Active Prayers",
@@ -33,7 +33,7 @@ export class PrayersComponent implements OnInit {
     } else {
       console.log("edit prayers");
       const newPrayer = window.prompt(`Update Prayer: ${description}`);
-      if (!newPrayer){
+      if (!newPrayer) {
         return
       }
       this.PrayersService.editPrayers(id, newPrayer, userId).subscribe(() => {

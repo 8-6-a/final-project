@@ -60,6 +60,7 @@
     background-attachment: scroll !important;
   }
 }
+
 /* End Responsive Styling */
 
 /* Header styling */
@@ -187,6 +188,7 @@ h1 {
   font-family: 'Lora', serif;
   font-size: 1.1em;
 }
+
 /* End Grid and Flex Containers */
 
 .flex1-container textarea {
@@ -196,7 +198,7 @@ h1 {
   color: black;
 }
 
-.flex1-container textarea::placeholder{
+.flex1-container textarea::placeholder {
   text-align: center;
 }
 
@@ -225,20 +227,20 @@ h1 {
   font-size: 1em;
 }
 
-.flexulactive-container li{
+.flexulactive-container li {
   list-style: none;
 }
 
-.flexulactive-container li:last-child{
+.flexulactive-container li:last-child {
   list-style: none;
   padding-bottom: 12px;
 }
 
-.flexultest-container li{
+.flexultest-container li {
   list-style: none;
 }
 
-.flexultest-container li:last-child{
+.flexultest-container li:last-child {
   list-style: none;
   padding-bottom: 12px;
 }
@@ -252,12 +254,12 @@ h1 {
   background-color: transparent;
 }
 
-.flexulactive-container::-webkit-scrollbar-thumb{
+.flexulactive-container::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
-.flexulactive-container::-webkit-scrollbar-thumb:hover{
-  background-color:  rgba(33, 66, 47, 0.637);
+.flexulactive-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(33, 66, 47, 0.637);
 }
 
 .flexultest-container::-webkit-scrollbar {
@@ -269,13 +271,14 @@ h1 {
   background-color: transparent;
 }
 
-.flexultest-container::-webkit-scrollbar-thumb{
+.flexultest-container::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
-.flexultest-container::-webkit-scrollbar-thumb:hover{
-  background-color:  rgba(33, 66, 47, 0.637);
+.flexultest-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(33, 66, 47, 0.637);
 }
+
 /* End UL Styling */
 
 /* Button Element Styling */
@@ -299,12 +302,12 @@ button:hover {
 
 button:active {
   background-color: white;
-  color:black;
+  color: black;
   box-shadow: 0 5px url("../../assets/prayer09scroll.jpg");
   transform: translateY(2px);
 }
 
-.buttonsubmit{
+.buttonsubmit {
   width: 25%;
   margin-bottom: 2em;
 }
@@ -324,9 +327,10 @@ button:active {
   padding-top: .8em;
   font-family: "Homemade Apple", 'cursive';
 }
+
 /* End Footer Styling */
 
 /* Hide the Scrollbar for the main page */
-html::-webkit-scrollbar{
- display: none;
+html::-webkit-scrollbar {
+  display: none;
 }
