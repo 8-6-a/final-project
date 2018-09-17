@@ -20,7 +20,7 @@ export class PrayersComponent implements OnInit {
       window.location.reload();
       this._flashMessagesService.show(
         "You created a Prayer, View it in Active Prayers",
-        { cssClass: "alert-success", timeout: 3000 }
+        { cssClass: "alert-success", timeout: 10000 }
       );
       console.log("created a prayer");
     });
@@ -28,7 +28,6 @@ export class PrayersComponent implements OnInit {
 
   // edits a current prayer
   edit(id, description, userId) {
-    //console.log(this.prayers._id, this.userId)
     if (userId !== this.userId) {
       alert("not allowed")
     } else {
@@ -41,7 +40,7 @@ export class PrayersComponent implements OnInit {
         window.location.reload();
         this._flashMessagesService.show(
           "You have edited a Prayer, View it in Active Prayers",
-          { cssClass: "alert-success", timeout: 3000 }
+          { cssClass: "alert-success", timeout: 10000 }
         );
       });
     }
@@ -56,7 +55,7 @@ export class PrayersComponent implements OnInit {
         window.location.reload();
         this._flashMessagesService.show(
           "Praise God! Your prayer was answered, View it in Testimonies",
-          { cssClass: "alert-success", timeout: 3000 }
+          { cssClass: "alert-success", timeout: 10000 }
         );
       });
     }
@@ -75,7 +74,7 @@ export class PrayersComponent implements OnInit {
     this.router.navigate(["/login"]);
     this._flashMessagesService.show(
       "You are logged out, Please log in to view Prayers",
-      { cssClass: "alert-danger", timeout: 4000 }
+      { cssClass: "alert-danger", timeout: 10000 }
     );
   }
 
