@@ -314,8 +314,19 @@ button:active {
 
 /* End Button Styling */
 
+.alert-success{
+  align-content: center;
+  background-color: lawngreen;
+}
+
+.alert-danger{
+  align-content: center;
+  background-color: tomato;
+}
+
 /* Footer styling */
-.footer {
+.flexfooter-container {
+  display: flex;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -323,11 +334,11 @@ button:active {
   height: 10%;
   background-image: url("../../assets/prayer09new.jpg");
   color: white;
-  text-align: center;
-  padding-top: .8em;
+  justify-content: center;
+  align-items: center;
   font-family: "Homemade Apple", 'cursive';
+  font-size: 1.6em;
 }
-
 /* End Footer Styling */
 
 /* Hide the Scrollbar for the main page */
