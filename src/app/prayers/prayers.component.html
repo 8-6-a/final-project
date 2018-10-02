@@ -1,5 +1,6 @@
 <head>
   <link href=“https://fonts.googleapis.com/css?family=Homemade+Apple%7CLora” rel=“stylesheet”>
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 </head>
 
 <!-- Header section showing the header and a sub menu with links to all of the specific sections. -->
@@ -18,8 +19,8 @@
 <!-- Submit a prayer section on the first row of our grid -->
 <div #item1 id="item1" class="flex1-container">
   <h3 class="title1"> Submit a Prayer</h3>
-  <textarea name="description" rows="4" class="txtarea" type="description" placeholder="Description" required
-    [(ngModel)]="prayer.description" #description="ngModel"></textarea>
+  <textarea name="description" rows="4" class="txtarea" type="description" placeholder="Description" 
+    [(ngModel)]="prayer.description" #description="ngModel" required></textarea>
 
   <button id="submit" class="buttonsubmit" (click)="create()">Submit</button>
 </div>
@@ -31,10 +32,14 @@
     <ul class="active">
       <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
         <li *ngIf="!prayer.prayerAnswered">
-          {{prayer.description}}<br>
-          <button class="buttonanswer" (click)="answeredPrayer(prayer._id, prayer.userId)">Answered</button>
+          {{prayer.description}}<input id="image" class= "delete" (click)="delete(prayer._id, prayer.userId)" type="image" src="https://cdn4.iconfinder.com/data/icons/common-toolbar/36/Delete-2-512.png">
           <br>
-          <button class="buttonedit" (click)="edit(prayer._id, prayer.description, prayer.userId)">Edit</button>
+          <p class="supporters">
+            <button class="buttonsupport" 
+            (click)="helperPrayer(prayer._id, prayer.prayerHelper)">Join in Prayer</button> 
+            # of Supporters:&nbsp; {{prayer.prayerHelper.length}}</p>
+          <button class="buttonanswer" (click)="answeredPrayer(prayer._id, prayer.userId)">Answered</button>
+          <button class="buttonedit" (click)="edit(prayer._id, prayer.description, prayer.userId)">Edit</button>          
         </li>
       </ng-template>
     </ul>
@@ -49,6 +54,7 @@
       <ng-template ngFor let-prayer [ngForOf]="prayers" | async>
         <li *ngIf="prayer.prayerAnswered">
           {{prayer.description}}<br>
+          <p class="supporters"># of Supporters:&nbsp; {{prayer.prayerHelper.length}}</p>
           <button class="buttonedit" (click)="edit(prayer._id, prayer.description, prayer.userId)">Edit</button>
         </li>
       </ng-template>
@@ -57,6 +63,4 @@
 </div>
 
 <!-- footer section  -->
-<div class="flexfooter-container">
-  {{header}}
-</div>
+<div class="flexfooter-container"> {{header}} </div>
