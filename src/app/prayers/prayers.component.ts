@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { PrayersService } from "../prayers.service";
 import { Router } from "@angular/router";
-import { async } from "@angular/core/testing";
 
 
+// functionality for a timer to hold the page up in order to display the message for a sufficient amount of time. 
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 };
@@ -23,9 +23,9 @@ export class PrayersComponent implements OnInit {
 
   // creates a new prayer
   create() {
-    this.PrayersService.createPrayers({ prayer: this.prayer, userId: this.userId }).subscribe(() => {
+    this.PrayersService.createPrayers({ prayer: this.prayer, userId: this.userId, prayerSupported: {sId: this.userId} }).subscribe(() => {
       this.header = " You created a Prayer, View it in Active Prayers "
-      sleep(2000).then(() => {
+      sleep(1500).then(() => {
         window.location.reload() 
         })
     })
@@ -43,17 +43,31 @@ export class PrayersComponent implements OnInit {
       }
       this.PrayersService.editPrayers(id, newPrayer, userId).subscribe(() => {
         this.header = " You have edited your Prayer "
-        sleep(2000).then(() => {
+        sleep(1500).then(() => {
           window.location.reload() 
           })
-      });
+      })
+    }
+  }
+
+  helperPrayer(id, prayerHelper, userId) {
+    if (userId !== this.userId) {
+      this.PrayersService.markPrayerHelper(id, this.userId).subscribe(() => {
+        this.header = 
+        "Thank you so much for your dedication and support. We look forward to seeing this Testimony"
+        sleep(1500).then(() => {
+         window.location.reload()
+        })
+      })
+    } else {
+      this.header = "Your already a supporter"
     }
   }
 
   // answers a prayer
   answeredPrayer(id, userId) {
     if (userId !== this.userId) {
-      this.header = " Not Allowed"
+      this.header = " Sorry, Your not the owner "
     } else {
       this.PrayersService.markPrayerAnswered(id).subscribe(() => {
         this.header =
@@ -66,11 +80,15 @@ export class PrayersComponent implements OnInit {
   }
 
   // deletes a prayer
-  delete(id) {
-    this.PrayersService.deletePrayers(id).subscribe(() => {
-      window.location.reload();
-      event.preventDefault();
-    });
+  delete(id, userId) {
+    if (userId !== this.userId) {
+      this.header = " Sorry, Your not the owner "
+    } else {
+      this.PrayersService.deletePrayers(id).subscribe(() => {
+        window.location.reload();
+        event.preventDefault();
+      })
+    }
   }
 
   // logs the user out of the session by deleting the token
@@ -94,7 +112,7 @@ export class PrayersComponent implements OnInit {
   constructor(
     private PrayersService: PrayersService,
     private router: Router,
-    
+
   ) {
 
     this.PrayersService.getPrayers().subscribe((data: any) => {
@@ -114,3 +132,4 @@ export class PrayersComponent implements OnInit {
     this.header = ' ...for My house will be called a house of Prayer for the nations.  Isaiah 56:7 '
   }
 }
+
