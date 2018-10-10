@@ -106,7 +106,6 @@
   #image{
     width: 4% !important;
   }
-  
 }
 /* End Tablet size */
 
@@ -135,6 +134,7 @@
     width: 2% !important;
   }
 }
+
 /* End Desktop responsive */
 
 /* End Responsive Styling */

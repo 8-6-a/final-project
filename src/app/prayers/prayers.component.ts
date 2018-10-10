@@ -132,3 +132,4 @@ export class PrayersComponent implements OnInit {
     this.header = ' ...for My house will be called a house of Prayer for the nations.  Isaiah 56:7 '
   }
 }
+
