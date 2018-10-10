@@ -1,5 +1,5 @@
 /* Responsive Design Declaration */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
   .header a:not(:first-child) {
     display: none;
   }
@@ -10,7 +10,8 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+/* Phone size responsive design */
+@media screen and (max-width: 620px) {
   .header.responsive {
     position: relative;
   }
@@ -32,20 +33,31 @@
     width: 75%;
   }
 
+  #image{
+    width: 8% !important;
+  }
+
   .buttonsubmit {
     width: 70% !important;
     font-weight: bolder;
-
   }
 
   .buttonanswer {
-    width: 85% !important;
-    font-weight: bolder;
+    width: 90% !important;
+    background-size: 6% !important;
+    font-size: .8em;
   }
 
   .buttonedit {
-    width: 85% !important;
-    font-weight: bolder;
+    width: 90% !important;
+    background-size: 6% !important;
+    font-size: .8em;
+  }
+
+  .buttonsupport {
+    width: 90% !important;
+    background-size: 6% !important;
+    font-size: .8em;
   }
 
   .flex1-container {
@@ -59,7 +71,71 @@
   .flex3-container {
     background-attachment: scroll !important;
   }
+
+  .flexfooter-container{
+    font-size: 1.5em !important;
+  }
 }
+/* End Phone size design */
+
+/* Tablet size responsive */
+@media screen and (min-width:620px){
+  .buttonsubmit {
+    width: 40% !important;
+    font-weight: bold;
+  }
+
+  .buttonanswer {
+    width: 40% !important;
+    background-size: 6% !important;
+    font-size: .7m;
+  }
+
+  .buttonedit {
+    width: 40% !important;
+    background-size: 6% !important;
+    font-size: .7em;
+  }
+
+  .buttonsupport {
+    width: 40% !important;
+    background-size: 6% !important;
+    font-size: .7em;
+  }
+
+  #image{
+    width: 4% !important;
+  }
+  
+}
+/* End Tablet size */
+
+/* Desktop responsive */
+@media screen and (min-width:1220px){
+  .buttonsubmit {
+    width: 25% !important;
+  }
+
+  .buttonanswer {
+    width: 10% !important;
+    background-size: 10% !important;
+  }
+
+  .buttonedit {
+    width:10% !important;
+    background-size: 10% !important;
+  }
+
+  .buttonsupport {
+    width: 12% !important;
+    background-size: 10% !important;
+  }
+
+  #image{
+    width: 2% !important;
+  }
+}
+/* End Desktop responsive */
 
 /* End Responsive Styling */
 
@@ -78,15 +154,15 @@
   text-align: center;
   text-decoration: none;
   padding: 10px 12px;
-  font-size: 1em;
+  font-size: 1.25em;
   border-radius: 4px;
-  font-family: "Lora";
+  font-family: 'Lora', serif;
 }
 
 .header a:hover {
   background-color: white;
   color: black;
-  font-size: 1em;
+  font-size: 1.35em;
 }
 
 .header .icon {
@@ -108,26 +184,26 @@ h1 {
 
 .flex1-container h3 {
   font-family: 'Homemade Apple', 'cursive';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
   text-align: center;
-  padding-top: 1em;
+  padding-top: .6em;
 }
 
 .flex2-container h3 {
   font-family: 'Homemade Apple', 'cursive';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
   text-align: center;
-  padding-top: 1em;
+  padding-top: .6em;
 }
 
 .flex3-container h3 {
   font-family: 'Homemade Apple', 'cursive';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
   text-align: center;
-  padding-top: 1em;
+  padding-top: .6em;
 }
 
 /* Grid and Flex Container Styling*/
@@ -173,7 +249,7 @@ h1 {
   grid-row-start: 3;
   grid-row-end: 4;
   height: 500px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -190,6 +266,7 @@ h1 {
 }
 
 /* End Grid and Flex Containers */
+
 
 .flex1-container textarea {
   height: 30%;
@@ -229,6 +306,8 @@ h1 {
 
 .flexulactive-container li {
   list-style: none;
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 .flexulactive-container li:last-child {
@@ -238,6 +317,8 @@ h1 {
 
 .flexultest-container li {
   list-style: none;
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 .flexultest-container li:last-child {
@@ -278,51 +359,125 @@ h1 {
 .flexultest-container::-webkit-scrollbar-thumb:hover {
   background-color: rgba(33, 66, 47, 0.637);
 }
-
 /* End UL Styling */
 
+
+.supporters{
+  font-size: .8em !important;
+}
+
+#image{
+  justify-content: center;
+  align-content: center;
+  padding: .1em;
+  width: 2%;
+  height: auto;
+  opacity: .8;
+}
+
 /* Button Element Styling */
-button {
-  background-color: white;
-  text-decoration: rgb(32, 54, 40);
-  font-size: 1em;
+.buttonsupport{
+  background-color: rgba(47, 111, 78, 0.495);
+  background-image: url("https://www.emojibase.com/resources/img/emojis/apple/1f64f.png");
+  background-size: contain;
+  background-size: 10.5%;
+  background-repeat: no-repeat;
+  background-position: left 4px center;
+  text-decoration: rgb(124, 172, 142);
+  font-size: .8em;
   font-family: 'Lora', serif;
-  border-radius: 10px;
-  width: 25%;
+  width: 12%;
   text-align: center;
-  font-weight: bolder;
-  margin: 0.5em .5em .5em 1em;
+  font-weight: 900;
+  margin: 0.0em .5em .5em 1em;
   color: black;
 }
 
-button:hover {
-  background: url("../../assets/prayer09scroll.jpg");
-  color: whitesmoke;
-}
-
-button:active {
+.buttonanswer {
   background-color: white;
+  background-image: url("https://www.emojibase.com/resources/img/emojis/apple/1f64c.png");
+  background-size: contain;
+  background-size: 10.5%;
+  background-repeat: no-repeat;
+  background-position: left 4px center;
+  text-decoration: rgb(32, 54, 40);
+  font-size: .6em;
+  font-family: 'Lora', serif;
+  width: 10%;
+  text-align: center;
+  font-weight: 500;
+  margin: 0.0em .5em .5em 1em;
   color: black;
-  box-shadow: 0 5px url("../../assets/prayer09scroll.jpg");
+  overflow: hidden;
+}
+
+.buttonedit {
+  background-color: white;
+  background-image: url("https://www.emojibase.com/resources/img/emojis/apple/270f.png");
+  background-size: contain;
+  background-size: 10.5%;
+  background-repeat: no-repeat;
+  background-position: left 4px center;
+  text-decoration: rgb(32, 54, 40);
+  font-size: .6em;
+  font-family: 'Lora', serif;
+  width: 10%;
+  text-align: center;
+  font-weight: 500;
+  margin: 0.0em .5em .5em 1em;
+  color: black;
+  overflow: hidden;
+}
+
+.buttonsupport:active {
+  background-color: white;
+  box-shadow: rgb(124, 172, 142);
   transform: translateY(2px);
 }
 
+.buttonanswer:active {
+  background-color: white;
+  transform: translateY(2px);
+}
+
+.buttonedit:active {
+  background-color: white;
+  transform: translateY(2px);
+}
+
+.buttonanswer:hover {
+  background-color: rgba(0, 128, 62, 0.42);
+  color: white;
+}
+
+.buttonedit:hover {
+  background-color: rgba(0, 128, 62, 0.42);
+  color: white;
+}
+
+.buttonsupport:hover {
+  background-color: rgba(0, 128, 62, 0.42);
+  color: white;
+}
+
 .buttonsubmit {
+  background-color: white;
+  text-decoration: rgb(32, 54, 40);
+  font-size: 1.5em;
+  font-family: 'Lora', serif;
+  text-align: center;
+  font-weight: bolder;
+  color: black;
   width: 25%;
   margin-bottom: 2em;
 }
 
+.buttonsubmit:hover {
+  background-color:  rgba(0, 128, 62, 0.42);
+  font-size: 1.5em;
+  color: black;
+}
 /* End Button Styling */
-
-.alert-success{
-  align-content: center;
-  background-color: lawngreen;
-}
-
-.alert-danger{
-  align-content: center;
-  background-color: tomato;
-}
 
 /* Footer styling */
 .flexfooter-container {
@@ -336,8 +491,8 @@ button:active {
   color: white;
   justify-content: center;
   align-items: center;
-  font-family: "Homemade Apple", 'cursive';
-  font-size: 1.6em;
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5em;
 }
 /* End Footer Styling */
 

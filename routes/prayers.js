@@ -3,13 +3,16 @@ const mongoose = require("mongoose");
 const router = express.Router();
 let Prayer = mongoose.model("Prayer");
 
+
 router.post("/", (req, res) => {
   let newPrayer = new Prayer();
   newPrayer.description = req.body.prayer.description;
   newPrayer.prayerAnswered = false;
   newPrayer.userId = req.body.userId;
-  console.log(this._id);
-  console.log(req.body);
+  newPrayer.prayerHelper = [{
+    sId: req.body.userId
+  }];
+
   newPrayer.save(err => {
     if (err) {
       res.send(err);
@@ -22,6 +25,7 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   Prayer.find({}).then(orders => {
     res.json(orders);
+    //console.log(orders)
   });
 });
 
@@ -30,7 +34,9 @@ router.put("/:id", (req, res) => {
     if (err) {
       res.send(err);
     } else {
+
       prayer.description = req.body.description;
+
       prayer.save(err => {
         if (err) {
           res.send(err);
@@ -42,9 +48,30 @@ router.put("/:id", (req, res) => {
   });
 });
 
+router.post("/helper/:id", (req, res) => {
+
+  Prayer.findById(req.params.id, (err, Prayer) => {
+    if (err) {
+      res.send(err)
+    } else {
+      var support = new Object();
+      support.sId = req.body.userId;
+
+      Prayer.prayerHelper.push(support);
+
+      Prayer.save((err) => {
+        if (err) {
+          res.send(err)
+        } else {
+          res.end()
+        }
+      })
+    }
+  })
+});
+
 router.delete("/:id", (req, res) => {
-  Prayer.deleteOne(
-    {
+  Prayer.deleteOne({
       _id: req.params.id
     },
     err => {
@@ -62,12 +89,12 @@ router.put("/answered/:id", (req, res) => {
     if (err) {
       res.send(err);
     } else {
+
       Prayer.prayerAnswered = Set.prayerAnswered = true;
-      console.log("set the prayer status true");
+
       Prayer.save(err => {
         if (err) {
           res.send(err);
-          console.log("error with your answered router");
         } else {
           res.end();
         }
