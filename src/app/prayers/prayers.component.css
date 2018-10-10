@@ -106,7 +106,6 @@
   #image{
     width: 4% !important;
   }
-  
 }
 /* End Tablet size */
 
@@ -135,6 +134,7 @@
     width: 2% !important;
   }
 }
+
 /* End Desktop responsive */
 
 /* End Responsive Styling */
@@ -184,7 +184,7 @@ h1 {
 
 .flex1-container h3 {
   font-family: 'Homemade Apple', 'cursive';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
   text-align: center;
   padding-top: .6em;
@@ -192,7 +192,7 @@ h1 {
 
 .flex2-container h3 {
   font-family: 'Homemade Apple', 'cursive';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
   text-align: center;
   padding-top: .6em;
@@ -200,7 +200,7 @@ h1 {
 
 .flex3-container h3 {
   font-family: 'Homemade Apple', 'cursive';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
   text-align: center;
   padding-top: .6em;
@@ -492,7 +492,7 @@ h1 {
   justify-content: center;
   align-items: center;
   font-family: 'Satisfy', cursive;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 /* End Footer Styling */
 
